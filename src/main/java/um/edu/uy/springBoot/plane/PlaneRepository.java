@@ -16,4 +16,6 @@ public interface PlaneRepository extends JpaRepository<Plane, Long> {
 
     Plane findByState(String state);
 
+    Plane findByAirline(String airline);
+
 }

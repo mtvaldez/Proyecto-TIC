@@ -31,6 +31,11 @@ public class Plane {
             nullable = false
     )
     private String state;
+    @Column(
+            name = "airline",
+            nullable = false
+    )
+    private String airline;
 
 
     public String getPlate() {
@@ -63,13 +68,20 @@ public class Plane {
     public void setState(String state) {
         this.state = state;
     }
+    public String getAirline() {
+        return airline;
+    }
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
 
-    public Plane(String plate, String type, String capacity, String seats) {
+    public Plane(String plate, String type, String capacity, String seats, String airline) {
         this.plate = plate;
         this.type = type;
         this.capacity = capacity;
         this.seats = seats;
         this.state = "Disponible";
+        this.airline = airline;
     }
 
     @Override
@@ -80,7 +92,7 @@ public class Plane {
                 ", capacity='" + capacity + '\'' +
                 ", seats='" + seats + '\'' +
                 ", state='" + state + '\'' +
+                ", airline='" + airline + '\'' +
                 '}';
     }
-
 }

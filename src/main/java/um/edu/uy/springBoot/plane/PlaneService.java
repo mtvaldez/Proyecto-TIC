@@ -13,10 +13,10 @@ public class PlaneService {
         this.planeRepository = planeRepository;
     }
 
-    public void savePlane(String plate, String type, String capacity, String seats) {
+    public void savePlane(String plate, String type, String capacity, String seats, String airline) {
         Plane alreadyExists = planeRepository.findByPlate(plate);
         if (alreadyExists == null) {
-            planeRepository.save(new Plane(plate, type, capacity, seats));
+            planeRepository.save(new Plane(plate, type, capacity, seats, airline));
         }
     }
 
